@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="HTML experiments for Gavin Nguyen's portfolio">
+  <title>HTML Experiments | Gavin Nguyen</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns='http://www.w3.org/2000/svg'%20viewBox='0%200%20100%20100'%3E%3Ctext%20y='.9em'%20font-size='90'%3E8%3C/text%3E%3C/svg%3E">
+  <style>
+    project-note { display: block; border: 1px solid; }
+  </style>
+</head>
+<body>
+  <header>
+    <p><a href="index.html">Gavin Nguyen</a></p>
+    <nav aria-label="Main navigation">
+      <a href="index.html#work-heading">Work</a> |
+      <a href="about.html">About</a> |
+      <a href="playground.html">Playground</a> |
+      <a href="contact.html">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>HTML Experiments</h1>
+
+    <section>
+      <h2>Audio</h2>
+      <audio controls preload="none">
+        <source src="media/audio.mp3" type="audio/mpeg">
+        Audio unavailable.
+      </audio>
+    </section>
+
+    <section>
+      <h2>Video</h2>
+      <video controls preload="metadata" width="480">
+        <source src="media/demo.mp4" type="video/mp4">
+          <source src="media/demo.mov" type="video/quicktime">
+        Your browser cannot play this video.
+      </video>
+      <p>Also used in my <a href="easy-does-it.html">Easy Does It case study</a>.</p>
+    </section>
+
+    <section>
+      <h2>Canvas</h2>
+      <canvas id="canvas-demo" width="240" height="100">A rectangle with a diagonal line.</canvas>
+    </section>
+
+    <section>
+      <h2>Template</h2>
+      <template id="case-study-template">
+        <article>
+          <h3>Project title</h3>
+          <p>Project details coming soon.</p>
+        </article>
+      </template>
+    </section>
+
+    <section>
+      <h2>Custom Elements</h2>
+      <project-note><p><b>Work in progress:</b> More projects coming soon.</p></project-note>
+      <p><code>&lt;hello-world&gt;</code> prints <strong>Hello World!</strong> in the console.</p>
+      <hello-world></hello-world>
+    </section>
+
+    <section>
+      <h2>Other Elements</h2>
+      <div>
+        <p>I <em>really</em> love <i>malatang</i>. My top <span>3</span> malatang places in SD are:</p>
+        <ol>
+          <li>Yin Tang</li>
+          <li>Zhangliang</li>
+          <li>YGF</li>
+        </ol>
+      </div>
+      <p><label for="demo-progress">Sample upload progress:</label> <progress id="demo-progress" value="2" max="3">2 of 3</progress></p>
+      <dialog open aria-label="Example dialog"><p>Example dialog</p></dialog>
+      <svg viewBox="0 0 120 80" width="120" height="80" role="img" aria-label="Eight-ball sketch">
+        <circle cx="40" cy="40" r="30" fill="none" stroke="black" stroke-width="2"></circle>
+        <circle cx="40" cy="40" r="12" fill="white" stroke="black"></circle>
+        <text x="36" y="45" font-size="14">8</text>
+      </svg>
+      <noscript><p>The canvas drawing and console message require JavaScript.</p></noscript>
+    </section>
+
+    <script>
+      const canvas = document.getElementById('canvas-demo');
+      const ctx = canvas.getContext('2d');
+      ctx.strokeRect(10, 10, 180, 70);
+      ctx.beginPath();
+      ctx.moveTo(10, 80);
+      ctx.lineTo(190, 10);
+      ctx.stroke();
+    </script>
+    <script>
+      customElements.define('hello-world', class extends HTMLElement {
+        connectedCallback() { console.log('Hello World!'); }
+      });
+    </script>
+  </main>
+</body>
+</html>
