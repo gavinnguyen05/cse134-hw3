@@ -1,1 +1,56 @@
+/*
+  Author: Gavin Nguyen
+  Repository: https://github.com/gavinnguyen05/cse134-hw3
+*/
+body {
+    font-family: Arial, sans-serif;
+    color: #222;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 24px;
+}
 
+h1 {
+    font-size: 2.5rem;
+}
+h2 {
+    font-size: 1.75rem;
+}
+
+.latin {
+    font-style: italic;
+}
+
+#warning {
+    background-color: #fff7dd;
+    padding: 16px;
+}
+
+blockquote {
+    border-left: 4px solid #8c8c8c;
+    margin: 24px 0;
+    padding: 12px 20px;
+    background-color: #f2f2f2;
+}
+
+a:hover {
+    color: #ff9020;
+    text-decoration: underline;
+}
+
+a:focus,
+input:focus,
+button:focus {
+    outline: 3px solid #3678d4;
+    outline-offset: 3px;
+}
+
+h2 {
+    letter-spacing: 0.5px;
+}
+
+h2 {
+    letter-spacing: 1px;
+    /* both rules target h2 so the second one takes priority because it comes later */
+}
